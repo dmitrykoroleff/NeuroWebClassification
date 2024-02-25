@@ -4,6 +4,7 @@ import React, { useRef, useState, useCallback, useEffect } from 'react';
 import Webcam from 'react-webcam';
 import useWebSocket, { ReadyState } from 'react-use-websocket';
 import axios from 'axios';
+import './App.css'
 
 function getBase64StrFromUrl(dataUrl) {
   const prefix = "base64,";
@@ -80,7 +81,7 @@ function WebcamCapture () {
           <img src={imgSrc} alt="Captured" style={{ marginTop: '10px' }} />
         </div>
       }
-      <button
+      <button className="train-model-btn"
         onClick={handleClickSendMessage}
         disabled={readyState !== ReadyState.OPEN}
       >

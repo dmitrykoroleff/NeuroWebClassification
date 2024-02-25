@@ -41,3 +41,33 @@
     transform: rotate(360deg);
   }
 }
+
+.train-model-btn {
+  display: inline;
+  background-color: #6C58E9;
+  border: 1.5px solid #fff;
+  border-radius: 8px;
+  border-style: 1px solid #fff;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  width: 160px;
+  height: 30px;
+  padding: 20px;
+  margin: 30px;
+  list-style: none;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+  transition: color 100ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.train-model-btn:hover
+{
+opacity: 0.8;
+}
