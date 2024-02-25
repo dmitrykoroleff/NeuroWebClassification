@@ -59,13 +59,7 @@ function WebcamCapture () {
 
   async function capture () {
     const imageSrc = webcamRef.current.getScreenshot();
-    // try {
-    //   await axios.post('/upload', { image: imageSrc });
-    //   console.log('Image sent to server.');
-    //   setImgSrc(imageSrc);
-    // } catch (error) {
-    //   console.error('Error sending image to server:', error);
-    // }
+    
   };
 
   return (
@@ -75,35 +69,8 @@ function WebcamCapture () {
         <Webcam audio={false} ref={webcamRef} screenshotFormat="image/jpeg" />
         <canvas
           ref={canvasRef}
-          // style={{
-          //   position: "absolute",
-          //   marginLeft: "auto",
-          //   marginRight: "auto",
-          //   left: 0,
-          //   right: 600,
-          //   top:20,
-          //   textAlign: "center",
-          //   zindex: 9,
-          //   width: 640,
-          //   height: 480,
-          // }}
+  
         />
-      </div>
-      <div style={{ margin: 'auto' }}>
-        <button
-          style={{
-            marginTop: '10px',
-            fontSize: '20px',
-            backgroundColor: '#423fff',
-            cursor: 'pointer',
-            borderRadius: "10px",
-            color: "white",
-            padding: "10px"
-          }}
-          onClick={capture}
-        >
-          Capture
-        </button>
       </div>
 
       {
@@ -113,18 +80,14 @@ function WebcamCapture () {
           <img src={imgSrc} alt="Captured" style={{ marginTop: '10px' }} />
         </div>
       }
-
-    <button onClick={handleClickChangeSocketUrl}>
-        Click Me to change Socket Url
-      </button>
       <button
         onClick={handleClickSendMessage}
         disabled={readyState !== ReadyState.OPEN}
       >
-        Click Me to send 'Hello'
+      Classify!
       </button>
       <span>The WebSocket is currently {connectionStatus}</span>
-      {lastMessage ? <span>Last message: {lastMessage.data}</span> : null}
+      {lastMessage ? <span>Object is {lastMessage.data}</span> : null}
       <ul>
         {messageHistory.map((message, idx) => (
           <span key={idx}>{message ? message.data : null}</span>
